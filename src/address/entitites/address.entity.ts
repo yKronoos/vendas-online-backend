@@ -11,10 +11,10 @@ export class AddressEntity{
     userId: number
 
     @Column()
-    complement: string
+    complement?: string
 
     @Column({name: "number"})
-    numberAdress: number
+    numberAdress?: number
 
     @Column()
     cep: string
