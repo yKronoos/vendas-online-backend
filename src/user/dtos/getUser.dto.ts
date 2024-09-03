@@ -1,3 +1,4 @@
+import { GetAddressesDTO } from '../../address/dtos/getAddresses.dto';
 import { UserEntity } from './../entitites/user.entity';
 export class GetUserDTO{
 
@@ -10,6 +11,7 @@ export class GetUserDTO{
         this.typeUser = entity.typeUser
         this.createdAt = entity.createdAt
         this.updatedAt = entity.updatedAt
+        this.addresses = entity.addresses ? entity.addresses.map((address) => new GetAddressesDTO(address)) : undefined
     }
 
     id?: number
@@ -20,4 +22,5 @@ export class GetUserDTO{
     typeUser: number
     createdAt?: Date
     updatedAt?: Date
+    addresses?: GetAddressesDTO[]
 }

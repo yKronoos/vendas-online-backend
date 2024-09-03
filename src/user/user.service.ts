@@ -36,6 +36,13 @@ export class UserService {
         const user =  await this.userRepository.findOne({
             where: {
                 id: userId
+            },
+            relations: {
+                addresses: {
+                    city: {
+                        state: true
+                    }
+                },
             }
         })
 
